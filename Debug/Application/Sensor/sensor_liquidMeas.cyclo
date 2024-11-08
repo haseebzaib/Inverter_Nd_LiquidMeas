@@ -1,0 +1,2 @@
+../Application/Sensor/sensor_liquidMeas.cpp:15:1:sensor_liquidMeas::liquidSensor::liquidSensor(ADC_HandleTypeDef*)	1
+../Application/Sensor/sensor_liquidMeas.cpp:20:22:sensor_liquidMeas::liquidSensor::status sensor_liquidMeas::liquidSensor::getLevel(unit, float, float, float, float*)	8

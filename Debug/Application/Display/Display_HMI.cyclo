@@ -1,0 +1,6 @@
+../Application/Display/Display_HMI.cpp:19:1:HMI::DWIN::DWIN(UART_HandleTypeDef*)	1
+../Application/Display/Display_HMI.cpp:24:19:HMI::DWIN::status HMI::DWIN::SendTankData(uint16_t, uint16_t)	1
+../Application/Display/Display_HMI.cpp:45:19:HMI::DWIN::status HMI::DWIN::SendTimeDateData(uint16_t, uint16_t, char*, char*)	1
+../Application/Display/Display_HMI.cpp:84:19:HMI::DWIN::status HMI::DWIN::SendNetworkData(uint16_t, char*)	1
+../Application/Display/Display_HMI.cpp:105:19:HMI::DWIN::status HMI::DWIN::SendNetworkQuality(uint16_t, char*)	1
+../Application/Display/Display_HMI.cpp:127:9:uint8_t HMI::DWIN::stringTohex(char*, uint8_t*, uint8_t, uint8_t)	3
