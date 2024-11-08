@@ -48,5 +48,48 @@ void freertos_Tasks::resume() {
 
 
 
+freertos_queues::freertos_queues(uint16_t queLen_,uint16_t itemsize_, uint8_t *pucQueueStorage_)
+{
+	 queLen = queLen_;
+	 itemsize = itemsize_;
+	 pucQueueStorage = pucQueueStorage_;
+
+}
+
+void freertos_queues::queueCreate()
+{
+	xQueue = xQueueCreateStatic(queLen,itemsize,pucQueueStorage,&xStaticQueue);
+}
+
+
+enum freertos_queues::queues_stat freertos_queues::queueSend(void *SendBuf)
+{
+	enum queues_stat stat = queues_sent;
+
+	if(xQueueSend(xQueue,SendBuf,pdMS_TO_TICKS(200)) != pdPASS)
+	{
+       return queues_err;
+	}
+
+
+	return stat;
+
+}
+enum freertos_queues::queues_stat freertos_queues::queueReceive(void *RecvBuf)
+{
+	enum queues_stat stat = queues_nothing;
+
+    if( xQueueReceive( xQueue,
+    		           RecvBuf,
+					   pdMS_TO_TICKS(50)) == pdPASS )
+      {
+    	 return queues_recived;
+      }
+
+
+	return stat;
+}
+
+
 }
 

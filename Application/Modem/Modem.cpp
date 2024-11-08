@@ -149,22 +149,22 @@ void simA7672::getNetwork(char *networkStat) {
 				== checking.sys_ok) {
 			switch (*networkStat) {
 			case '0': {
-				std::strcpy(networkStat, "Not reg");
+				std::strcpy(networkStat, "Not-Reg");
 
 				break;
 			}
 			case '1': {
-				std::strcpy(networkStat, "Registered, home network");
+				std::strcpy(networkStat, "Reg-Home");
 
 				break;
 			}
 			case '2': {
-				std::strcpy(networkStat, "Currently Searching");
+				std::strcpy(networkStat, "Searching");
 
 				break;
 			}
 			case '3': {
-				std::strcpy(networkStat, "Registration denied");
+				std::strcpy(networkStat, "Reg-denied");
 
 				break;
 			}
@@ -174,17 +174,17 @@ void simA7672::getNetwork(char *networkStat) {
 				break;
 			}
 			case '5': {
-				std::strcpy(networkStat, "Registered,roaming");
+				std::strcpy(networkStat, "Reg-Roaming");
 
 				break;
 			}
 			case '6': {
-				std::strcpy(networkStat, "Registered SMS only");
+				std::strcpy(networkStat, "Reg-SMS");
 
 				break;
 			}
 			case '7': {
-				std::strcpy(networkStat, "Registered SMS only,roaming");
+				std::strcpy(networkStat, "Reg-SMSR");
 
 				break;
 			}

@@ -10,6 +10,10 @@
 #include "Init.hpp"
 
 
+System_Rtos::freertos_Tasks ModemTaskHandler(ModemTask,"Modem",_StackSize_Modem, (void*) 1,24);
+System_Rtos::freertos_Tasks InverterTaskHandler(InverterTask,"Inverter",_StackSize_Inverter, (void*) 1,24);
+System_Rtos::freertos_Tasks ControlnDDisplayTaskHandler(ControlnDDisplayTask,"ControlDis",_StackSize_ControlnDDisplay, (void*) 1,24);
+
 
 
 
@@ -18,8 +22,8 @@ void app_mainCpp()
 {
 
 	ModemTaskHandler.createTask();
-   InterfaceTaskHandler.createTask();
-   ControlnDDisplayTaskHandler.createTask();
+	InverterTaskHandler.createTask();
+    ControlnDDisplayTaskHandler.createTask();
 
 }
 

@@ -42,9 +42,11 @@ Application/ControlnDDisplayTask.o: \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../Application/Display/Display_HMI.hpp \
  F:/haseeb/liquidMeasuringProject/Inverter_Nd_LiquidMeas/Application/System/System_serial.hpp \
- ../Application/Sensor/sensor_liquidMeas.hpp
+ ../Application/Sensor/sensor_liquidMeas.hpp ../Application/Init.hpp
 ../Application/app_main.hpp:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -92,6 +94,9 @@ Application/ControlnDDisplayTask.o: \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 ../Application/Display/Display_HMI.hpp:
 F:/haseeb/liquidMeasuringProject/Inverter_Nd_LiquidMeas/Application/System/System_serial.hpp:
 ../Application/Sensor/sensor_liquidMeas.hpp:
+../Application/Init.hpp:

@@ -8,24 +8,37 @@
 #ifndef INIT_HPP_
 #define INIT_HPP_
 
-#include "main.h"
-#include "app_main.hpp"
+//#include "main.h"
+//#include "app_main.hpp"
 #include "System/System_Rtos.hpp"
 
 
 void ModemTask(void * pvParameters);
-void InterfaceTask(void * pvParameters);
+void InverterTask(void * pvParameters);
 void ControlnDDisplayTask(void * pvParameters);
 
 
+
 #define _StackSize_Modem 512
-#define _StackSize_Interface 256
+#define _StackSize_Inverter 256
 #define _StackSize_ControlnDDisplay 256
 
 
-System_Rtos::freertos_Tasks ModemTaskHandler(ModemTask,"Modem",_StackSize_Modem, (void*) 1,24);
-System_Rtos::freertos_Tasks InterfaceTaskHandler(InterfaceTask,"Interface",_StackSize_Interface, (void*) 1,24);
-System_Rtos::freertos_Tasks ControlnDDisplayTaskHandler(ControlnDDisplayTask,"ControlDis",_StackSize_ControlnDDisplay, (void*) 1,24);
+extern System_Rtos::freertos_Tasks ModemTaskHandler;
+extern System_Rtos::freertos_Tasks InverterTaskHandler;
+extern System_Rtos::freertos_Tasks ControlnDDisplayTaskHandler;
 
+extern System_Rtos::freertos_queues ModemDataQueue;
+//extern System_Rtos::freertos_queues InverterDataQueue;
+
+
+struct ModemData_Runtime {
+	char time[10];
+	char date[10];
+	char timezone[5];
+	char pin[15];
+	char networkStat[15];
+	char quality[10];
+};
 
 #endif /* INIT_HPP_ */

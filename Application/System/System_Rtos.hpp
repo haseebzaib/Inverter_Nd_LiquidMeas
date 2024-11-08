@@ -12,7 +12,7 @@
 
 #include "FreeRTOS.h"
 #include "task.h"
-
+#include "queue.h"
 
 
 
@@ -49,6 +49,32 @@ private:
 
 
 class freertos_queues {
+public:
+	enum queues_stat{
+		queues_recived = 0,
+		queues_sent = 1,
+		queues_nothing = 2,
+		queues_err = 3,
+		queues_ok =4,
+	};
+
+	freertos_queues(uint16_t queLen_,uint16_t itemsize_, uint8_t *pucQueueStorage_);
+	void queueCreate();
+	enum queues_stat queueSend(void *SendBuf);
+	enum queues_stat queueReceive(void *RecvBuf);
+
+private:
+
+	QueueHandle_t xQueue;
+	StaticQueue_t xStaticQueue;
+
+	uint16_t queLen;
+	uint16_t itemsize;
+	uint8_t *pucQueueStorage;
+
+
+
+
 
 };
 

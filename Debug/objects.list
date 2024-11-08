@@ -1,5 +1,5 @@
 "./Application/ControlnDDisplayTask.o"
-"./Application/InterfaceTask.o"
+"./Application/InverterTask.o"
 "./Application/ModemTask.o"
 "./Application/app_main.o"
 "./Application/Display/Display_HMI.o"

@@ -7,10 +7,14 @@
 
 #include "app_main.hpp"
 #include "System/System_Rtos.hpp"
-void InterfaceTask(void *pvParameters) {
+#include "Init.hpp"
+
+
+
+void InverterTask(void *pvParameters) {
 
 	while (1) {
-		System_Rtos::delay(500);
+		System_Rtos::delay(1000);
 	}
 
 }

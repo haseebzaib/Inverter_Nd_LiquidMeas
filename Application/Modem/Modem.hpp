@@ -29,7 +29,7 @@ public:
 	static struct classInstanceRecorder ClassInstances[numberofuart];
 	static uint8_t ClassInstanceIncrementer;
 
-	static constexpr uint16_t BufferLen = 4096;
+	static constexpr uint16_t BufferLen = 2048;
 	uint8_t Rxbuffer[BufferLen] = { 0 };
 	uint8_t Txbuffer[100] = { 0 };
 	//Access this
