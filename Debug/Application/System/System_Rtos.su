@@ -1,0 +1,5 @@
+../Application/System/System_Rtos.cpp:14:6:void System_Rtos::delay(uint32_t)	16	static
+../Application/System/System_Rtos.cpp:19:1:System_Rtos::freertos_Tasks::freertos_Tasks(TaskFunction_t, const char*, uint16_t, void*, UBaseType_t)	24	static
+../Application/System/System_Rtos.cpp:32:6:void System_Rtos::freertos_Tasks::createTask()	32	static
+../Application/System/System_Rtos.cpp:39:6:void System_Rtos::freertos_Tasks::suspend()	16	static
+../Application/System/System_Rtos.cpp:44:6:void System_Rtos::freertos_Tasks::resume()	16	static

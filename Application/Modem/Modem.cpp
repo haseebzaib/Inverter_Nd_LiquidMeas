@@ -11,7 +11,7 @@
 #include "System/System_serial.hpp"
 #include "atcmd.hpp"
 #include "main.h"
-
+#include "System/System_Rtos.hpp"
 namespace Modem {
 
 struct simA7672::classInstanceRecorder simA7672::ClassInstances[numberofuart] =
@@ -51,7 +51,7 @@ enum simA7672::status simA7672::init() {
 	PrepRxTx(atcmd_ATCRESET, sizeof(atcmd_ATCRESET) - 1, 1000, _LF, CMD_mode);
 	stat = check_eventTimeout(rx_evt, 5000);
 
-	HAL_Delay(30000);
+	System_Rtos::delay(30000);
 
 	/*After reset send two AT just to make gsm responsive*/
 	PrepRxTx(atcmd_AT, sizeof(atcmd_AT) - 1, 1000, _LF, CMD_mode);
@@ -284,7 +284,7 @@ void simA7672::PrepRx(uint8_t end_char, enum Rxmode Rxmode) {
 
 }
 void simA7672::PrepTx(const uint8_t *Txbuf, uint16_t len, uint16_t timeout) {
-	memset(Txbuffer, 0, BufferLen);
+	memset(Txbuffer, 0, 100);
 	rst_event(tx_evt);
 	serial_.TransmitData(Txbuf, len, timeout);
 
@@ -293,7 +293,7 @@ void simA7672::PrepRxTx(const uint8_t *Txbuf, uint16_t len, uint16_t timeout,
 		uint8_t end_char, enum Rxmode Rxmode) {
 
 	memset(Rxbuffer, 0, BufferLen);
-	memset(Txbuffer, 0, BufferLen);
+	memset(Txbuffer, 0, 100);
 	rst_event(rx_evt);
 	rst_event(tx_evt);
 
@@ -346,7 +346,7 @@ enum simA7672::status simA7672::check_eventTimeout(enum eventType event,
 	while ((check_event(event) != simA7672_OK)
 			&& (HAL_GetTick() - prev_time < timeout)) {
 		//wait here until get event or time passes
-		HAL_Delay(10);
+		System_Rtos::delay(10);
 	}
 
 	if (check_event(event) != simA7672_OK) {

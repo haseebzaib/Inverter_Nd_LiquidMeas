@@ -33,7 +33,8 @@ Application/System/System_serial.o: \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../Core/Inc/usart.h ../Core/Inc/main.h \
- F:/haseeb/liquidMeasuringProject/Inverter_Nd_LiquidMeas/Application/app_main.hpp
+ F:/haseeb/liquidMeasuringProject/Inverter_Nd_LiquidMeas/Application/app_main.hpp \
+ ../Core/Inc/adc.h ../Core/Inc/gpio.h
 ../Application/System/System_serial.hpp:
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -70,3 +71,5 @@ Application/System/System_serial.o: \
 ../Core/Inc/usart.h:
 ../Core/Inc/main.h:
 F:/haseeb/liquidMeasuringProject/Inverter_Nd_LiquidMeas/Application/app_main.hpp:
+../Core/Inc/adc.h:
+../Core/Inc/gpio.h:

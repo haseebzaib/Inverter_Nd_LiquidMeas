@@ -11,10 +11,14 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "main.h"
+#include "main.h"
+#include "usart.h"
+#include "adc.h"
+#include "gpio.h"
+
+
 
 void app_mainCpp();
-
-
 
 
 

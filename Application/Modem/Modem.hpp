@@ -31,7 +31,7 @@ public:
 
 	static constexpr uint16_t BufferLen = 4096;
 	uint8_t Rxbuffer[BufferLen] = { 0 };
-	uint8_t Txbuffer[BufferLen] = { 0 };
+	uint8_t Txbuffer[100] = { 0 };
 	//Access this
 	uint8_t *const GlobalTxBufs[1];
 	uint8_t *const GlobalRxBufs[1];
